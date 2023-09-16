@@ -2,33 +2,80 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\t\t\t***РџСЂРѕРіСЂР°РјРјР° РѕРїСЂРµРґРµР»РµРЅРёСЏ РІРµСЃРѕРІ С‚РѕРІР°СЂРѕРІ***\n\n\n");
+        System.out.println("\t\t\t***Программа определения весов товаров***\n\n\n");
 
-        System.out.println("Р’РІРµРґРёС‚Рµ РїРµСЂРІС‹Р№ РІРµСЃ: ");
+        System.out.println("Введите первый вес: ");
         double first = new Scanner(System.in).nextDouble();
 
-        System.out.println("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕР№ РІРµСЃ: ");
+        System.out.println("Введите второй вес: ");
         double second = new Scanner(System.in).nextDouble();
 
-        System.out.println("Р’РІРµРґРёС‚Рµ С‚СЂРµС‚РёР№ РІРµСЃ: ");
+        System.out.println("Введите третий вес: ");
         double third = new Scanner(System.in).nextDouble();
 
         double greatest = 0;
         double average = 0;
         double smallest = 0;
-        //todo РґРѕРїРёСЃР°С‚СЊ Р»РѕРіРёРєСѓ РїСЂРѕРіСЂР°РјРјС‹ РЅРёР¶Рµ.
-
-
-
-
-
-
-
+        //todo дописать логику программы ниже.
+       /* if (first > second && first > third){
+            greatest = first;
+        } else if (second > first && second > third) {
+            greatest = second;
+        }else {
+            greatest = third;
+        }
+        if (first < second && first < third){
+            smallest = first;
+        } else if (second < first && second < third) {
+            smallest = second;
+        }else {
+            smallest = third;
+        }
+        if((first > second && first < third)||(first < second && first > third)){
+            average = first;
+        } else if ((second > first && second < third)||(second < first && second > third)) {
+            average = second;
+        }else {
+            average = third;
+        }
+        /*
+        */
+        /*if (first > second && first > third) {
+            greatest = first;
+        } else if (first < second && first < third) {
+            smallest = first;
+        } else {
+            average = first;
+        }
+        if (second > first && second > third) {
+            greatest = second;
+        } else if (second < first && second < third) {
+            smallest = second;
+        } else {
+            average = second;
+        }
+        if (third > second && third > second) {
+            greatest = third;
+        } else if (third < second && third < second) {
+            smallest = third;
+        } else {
+            average = third;
+        }*/
+        greatest = first > second && first > third ? first : second > third ? second : third;
+        smallest = first < second && first < third ? first : second < third ? second : third;
+        if((first > second && first < third) || (first < second && first > third))
+        {
+            average = first;
+        } else if ((second > first && second < third) || (second < first && second > third)) {
+            average = second;
+        }else {
+            average = third;
+        }
         //todo
 
 
-        System.out.println("РќР°РёР±РѕР»СЊС€РёР№ РІРµСЃ: " + 10);
-        System.out.println("РЎСЂРµРґРЅРёР№ РІРµСЃ: " + 9);
-        System.out.println("РќР°РёРјРµРЅСЊС€РёР№ РІРµСЃ: " + 1);
+        System.out.println("Наибольший вес: " + greatest);
+        System.out.println("Средний вес: " + average);
+        System.out.println("Наименьший вес: " + smallest);
     }
 }
